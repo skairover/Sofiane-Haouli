@@ -1,22 +1,30 @@
 import pfp from './assets/profile-picture.jpg'
-import { FaGithub, FaLink } from "react-icons/fa";
+import { FaGithub, FaHome, FaProjectDiagram, FaCode, FaEnvelope } from "react-icons/fa";
 import { GrLocationPin } from "react-icons/gr";
 import { FaLinkedin } from "react-icons/fa";
-import { BiHomeAlt2 } from "react-icons/bi";
 
 const App = () => {
+
+  const navItems = [
+  { name: 'Home', icon: <FaHome />, href: '/' },
+  { name: 'Projects', icon: <FaProjectDiagram />, href: '/projects' },
+  { name: 'Stack', icon: <FaCode />, href: '/stack' },
+  { name: 'Contact', icon: <FaEnvelope />, href: '/contact' },
+];
+
   return (
     <div className="flex w-screen h-screen relative overflow-hidden">
       <section className="flex flex-col items-center h-full w-48 text-white bg-[#181818] py-10">
         <p className='mb-30'>Sofiane Haouli</p>
         <hr style={{ height: '2px', borderWidth: 0, color: 'gray', backgroundColor: 'gray' }} />
-        {['Home', 'Projects', 'Tools', 'Contact'].map((item) => (
+        {navItems.map(({ name, icon, href }) => (
           <a
-            key={item}
-            href="/"
-            className="mb-3 w-20 h-8 text-gray-300 hover:text-white hover:bg-[#545454] transition duration-300 ease-in-out flex justify-center items-center rounded"
+            key={name}
+            href={href}
+            className="mb-3 w-32 h-10 text-gray-300 hover:text-white hover:bg-[#545454] transition delay-150 duration-300 ease-in-out flex gap-2 justify-start items-center px-2 rounded"
           >
-            {item}
+            <span className="text-lg" style={{fontSize:'16px'}}>{icon}</span>
+            <span>{name}</span>
           </a>
         ))}
       </section>
@@ -34,8 +42,15 @@ const App = () => {
           </div>
         </div>
         <div className='flex mb-3'>
-          <FaGithub size='32' className='mx-3 hover:text-gray-300'/>
-          <FaLinkedin size='32' className='hover:text-gray-300' />
+         <a href='https://github.com/skairover' 
+            target="_blank"
+            rel="noopener noreferrer"><FaGithub size='32' className='mx-3 hover:text-gray-300' />
+        </a> 
+        <a href='https://www.linkedin.com/in/sofiane-haouli-a6b659288/'
+           target="_blank"
+           rel="noopener noreferrer" >
+            <FaLinkedin size='32' className='hover:text-gray-300' />
+        </a>
         </div>
         <div className='flex'>
           <button className="bg-yellow-300 hover:bg-yellow-400 w-32 text-black mx-3 px-3 py-1 rounded">
