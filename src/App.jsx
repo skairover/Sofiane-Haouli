@@ -1,6 +1,9 @@
 import React, { useState, useRef } from 'react'; 
-import { FaGithub, FaHome, FaProjectDiagram, FaCode, FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaHome, FaProjectDiagram, FaCode, FaEnvelope, FaLinkedin, FaReact, FaNodeJs, FaPython, FaCss3Alt, FaHtml5 } from "react-icons/fa";
 import { GrLocationPin } from "react-icons/gr";
+import { SiJavascript } from "react-icons/si";
+import TrackMint from './assets/TrackMint.png'
+import './app.css'
 
 const App = () => {
   const [isDragging, setIsDragging] = useState(false);
@@ -63,10 +66,9 @@ const App = () => {
   ];
 
   // Mock profile picture using a placeholder
-  const TrackMint = "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=200&fit=crop";
   const pfp = "https://avatar.iran.liara.run/public/37"
   return (
-    <div className="flex flex-col lg:flex-row w-full min-h-screen bg-black relative">
+    <div className="flex flex-col lg:flex-row w-full min-h-screen relative ">
       
       {/* Sidebar */}
       <section className="w-full lg:w-48 flex flex-row lg:flex-col items-center lg:items-start text-white bg-[#181818] py-4 lg:py-10 px-4 shrink-0">
@@ -96,18 +98,19 @@ const App = () => {
             {/* Profile Card Container */}
             <div 
               ref={containerRef}
-              className="relative min-h-[320px] w-[60%] bg-gray-900/20 rounded-lg border border-gray-700/20 overflow-hidden"
+              className="relative min-h-[320px]  sm:w-[80%] lg:w-[70%] bg-gray-900/20 rounded-lg border border-gray-700/20 overflow-hidden mx-auto"
             >
+
               <div
                 ref={cardRef}
                 onMouseDown={handleMouseDown}
-                className={`absolute flex flex-col justify-between bg-[#181818] h-full text-white rounded-lg p-6 shadow-lg w-full  ${isDragging ? 'cursor-grabbing' : 'cursor-grab'} select-none transition-shadow hover:shadow-xl`}
+                className={`absolute flex flex-col justify-between bg-[#181818] h-full text-white rounded-lg p-6 shadow-lg w-full cursor-move select-none transition-shadow hover:shadow-xl`}
                 style={{
                   transform: `translate(${dragPos.x}px, ${dragPos.y}px)`,
                   zIndex: isDragging ? 50 : 10
                 }}
               >
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
                   <div className="flex-1 text-center sm:text-left">
                     <h1 className="text-2xl md:text-3xl font-bold mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>
                       Sofiane Haouli
@@ -147,18 +150,44 @@ const App = () => {
                   </a>
                 </div>
 
-                <div className="flex flex-col sm:flex-row mt-4 gap-3">
-                  <button 
-                    className="bg-yellow-300 hover:bg-yellow-400 text-black px-4 py-2 rounded font-bold transition-colors text-sm"
-                  >
-                    Let's Chat
-                  </button>
-                  <button 
-                    className="border border-yellow-300 hover:border-yellow-400 hover:bg-yellow-300 hover:text-black text-white px-4 py-2 rounded transition-all text-sm"
-                  >
-                    Download CV
-                  </button>
-                </div>
+<div className="flex flex-col sm:flex-row mt-4 gap-3">
+  {/* Animated Hire Me Button */}
+  <button 
+    className="relative group overflow-hidden bg-yellow-300 hover:bg-yellow-400 text-black px-4 py-2 rounded font-bold text-sm min-w-[120px] h-[40px]"
+  >
+    <span className="block h-full overflow-hidden relative">
+      <span className="block transition-transform duration-[0.4s] ease-[cubic-bezier(.51,.92,.24,1.15)] translate-y-0 group-hover:-translate-y-full">
+        Hire me
+      </span>
+      <span 
+        className="absolute top-0 left-0 w-full transition-transform duration-[0.4s] ease-[cubic-bezier(.51,.92,.24,1.15)] translate-y-full group-hover:translate-y-0" 
+        aria-hidden="true"
+      >
+        Hire me
+      </span>
+    </span>
+  </button>
+
+  {/* Animated Download CV Button */}
+  <button 
+    className="relative group overflow-hidden border border-yellow-300 hover:border-yellow-400 bg-transparent text-white  px-4 py-2 rounded font-bold text-sm min-w-[120px] h-[40px]"
+  >
+    <span className="block h-full overflow-hidden relative">
+      <span className="block transition-transform duration-[0.4s] ease-[cubic-bezier(.51,.92,.24,1.15)] translate-y-0 group-hover:-translate-y-full">
+        Download CV
+      </span>
+      <span 
+        className="absolute top-0 left-0 w-full transition-transform duration-[0.4s] ease-[cubic-bezier(.51,.92,.24,1.15)] translate-y-full group-hover:translate-y-0" 
+        aria-hidden="true"
+      >
+        Download CV
+      </span>
+    </span>
+  </button>
+</div>
+
+
+
               </div>
             </div>
             
@@ -199,20 +228,39 @@ const App = () => {
           </div>
 
           {/* Right Column - Additional Content */}
-          <div className="xl:col-span-1 min-h-[300px] xl:min-h-full">
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg p-6 h-full flex items-center justify-center">
-              <div className="text-center text-white">
-                <h3 className="text-lg font-semibold mb-4">Skills & Tech Stack</h3>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {['React', 'Node.js', 'JavaScript', 'Python', 'CSS', 'HTML'].map((skill) => (
-                    <span key={skill} className="bg-white/20 px-2 py-1 rounded text-xs">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+<div className="xl:col-span-1 min-h-[300px] xl:min-h-full">
+  <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg p-6 h-full flex items-center justify-center">
+    <div className="text-center text-black">
+      <h3 className="text-lg font-semibold mb-4">Skills & Tech Stack</h3>
+      <div className="grid grid-cols-3 gap-4 justify-center">
+        {[
+          { name: 'React', icon: <FaReact /> },
+          { name: 'Node.js', icon: <FaNodeJs /> },
+          { name: 'JavaScript', icon: <SiJavascript /> },
+          { name: 'Python', icon: <FaPython /> },
+          { name: 'CSS', icon: <FaCss3Alt /> },
+          { name: 'HTML', icon: <FaHtml5 /> },
+        ].map((skill, index) => (
+          <div
+            key={index}
+            className="group flex flex-col items-center bg-white/60 p-2 rounded transform transition-all duration-300 hover:scale-110 hover:text-yellow-700 overflow-hidden"
+          >
+            <div className="text-2xl">{skill.icon}</div>
+
+            <div className="relative block h-6 overflow-hidden w-fit text-sm font-semibold">
+              
+                <div className="h-6 block w-full transition-transform duration-[0.4s] ease-[cubic-bezier(.51,.92,.24,1.15)] translate-y-0 group-hover:-translate-y-full">{skill.name}</div>
+                <div className="h-6 absolute top-0 left-0 w-full block transition-transform duration-[0.4s] ease-[cubic-bezier(.51,.92,.24,1.15)] translate-y-full group-hover:translate-y-0 " aria-hidden='true'>{skill.name}</div> {/* same word for animation */}
+              
             </div>
           </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
         </div>
       </main>
