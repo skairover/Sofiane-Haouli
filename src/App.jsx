@@ -98,7 +98,7 @@ const App = () => {
             {/* Profile Card Container */}
             <div 
               ref={containerRef}
-              className="relative min-h-[320px]  sm:w-[80%] lg:w-[70%] bg-gray-900/20 rounded-lg border border-gray-700/20 overflow-hidden mx-auto"
+              className="relative min-h-[320px] w-full md:w-[70%] bg-gray-900/20 rounded-lg border border-gray-700/20 overflow-hidden mx-auto"
             >
 
               <div
@@ -112,13 +112,13 @@ const App = () => {
               >
                 <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
                   <div className="flex-1 text-center sm:text-left">
-                    <h1 className="text-2xl md:text-3xl font-bold mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>
+                    <h1 className="text-xl md:text-4xl font-bold mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>
                       Sofiane Haouli
                     </h1>
-                    <h3 className="text-gray-300 text-lg md:text-xl mb-3">
+                    <h3 className="text-gray-300 text-base md:text-xl mb-3">
                       Full-stack Web Developer
                     </h3>
-                    <p className="flex items-center justify-center sm:justify-start text-gray-300">
+                    <p className="flex items-center text-base md:text-lg justify-center sm:justify-start text-gray-300">
                       <GrLocationPin className="mr-1" />
                       Algeria
                     </p>
