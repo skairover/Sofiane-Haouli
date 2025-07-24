@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react'; 
 import { FaGithub, FaHome, FaProjectDiagram, FaCode, FaEnvelope, FaLinkedin, FaReact, FaNodeJs, FaPython, FaCss3Alt, FaHtml5 } from "react-icons/fa";
 import { GrLocationPin } from "react-icons/gr";
-import { SiJavascript } from "react-icons/si";
+import { SiJavascript, SiNextdotjs, SiMongodb, SiTailwindcss } from "react-icons/si";
+
 import TrackMint from './assets/TrackMint.png'
 import './app.css'
 
@@ -118,7 +119,7 @@ const App = () => {
                     <h3 className="text-gray-300 text-base md:text-xl mb-3">
                       Full-stack Web Developer
                     </h3>
-                    <p className="flex items-center text-base md:text-lg justify-center sm:justify-start text-gray-300">
+                    <p className="flex items-center text-base md:text-lg justify-start text-gray-300">
                       <GrLocationPin className="mr-1" />
                       Algeria
                     </p>
@@ -126,7 +127,7 @@ const App = () => {
                   <img 
                     src={pfp} 
                     alt="profile" 
-                    className="w-20  md:w-24 md:h-24 object-cover rounded-xl shrink-0 pointer-events-none" 
+                    className="w-20  md:w-32 md:h-32 object-cover rounded-xl shrink-0 pointer-events-none" 
                     draggable="false"
                   />
                 </div>
@@ -150,10 +151,10 @@ const App = () => {
                   </a>
                 </div>
 
-<div className="flex flex-col sm:flex-row mt-4 gap-3">
+<div className="flex flex-row  mt-4 gap-3">
   {/* Animated Hire Me Button */}
   <button 
-    className="relative group overflow-hidden bg-yellow-300 hover:bg-yellow-400 text-black px-4 py-2 rounded font-bold text-sm min-w-[120px] h-[40px]"
+    className="relative group overflow-hidden bg-yellow-300 hover:bg-yellow-400 text-black px-4 py-2 rounded font-bold text-sm w-[7.5rem] h-[2.5rem]"
   >
     <span className="block h-full overflow-hidden relative">
       <span className="block transition-transform duration-[0.4s] ease-[cubic-bezier(.51,.92,.24,1.15)] translate-y-0 group-hover:-translate-y-full">
@@ -170,7 +171,7 @@ const App = () => {
 
   {/* Animated Download CV Button */}
   <button 
-    className="relative group overflow-hidden border border-yellow-300 hover:border-yellow-400 bg-transparent text-white  px-4 py-2 rounded font-bold text-sm min-w-[120px] h-[40px]"
+    className="relative group overflow-hidden border border-yellow-300 hover:border-yellow-400 bg-transparent text-white  px-4 py-2 rounded font-bold text-sm min-w-[7.5rem] h-[2.5rem]"
   >
     <span className="block h-full overflow-hidden relative">
       <span className="block transition-transform duration-[0.4s] ease-[cubic-bezier(.51,.92,.24,1.15)] translate-y-0 group-hover:-translate-y-full">
@@ -235,11 +236,14 @@ const App = () => {
       <div className="grid grid-cols-3 gap-4 justify-center">
         {[
           { name: 'React', icon: <FaReact /> },
-          { name: 'Node.js', icon: <FaNodeJs /> },
+          { name: 'NodeJs', icon: <FaNodeJs /> },
           { name: 'JavaScript', icon: <SiJavascript /> },
           { name: 'Python', icon: <FaPython /> },
           { name: 'CSS', icon: <FaCss3Alt /> },
           { name: 'HTML', icon: <FaHtml5 /> },
+          { name: 'NextJs', icon: <SiNextdotjs />},
+          { name: 'MongoDB', icon: <SiMongodb />},
+          { name: 'Tailwind', icon: <SiTailwindcss />},
         ].map((skill, index) => (
           <div
             key={index}
