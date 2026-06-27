@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+@font-face {
+  font-family: tanker;
+  src: url("../src/assets/fonts/Tanker-Regular.otf");
+}
+
+>>>>>>> 1ab69af (Initial commit)
 @import "tailwindcss";
 
 :root {
@@ -26,6 +34,7 @@ html,body,#root {
 
 
 
+<<<<<<< HEAD
 button {
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -34,6 +43,9 @@ button {
   cursor: pointer;
 
 }
+=======
+
+>>>>>>> 1ab69af (Initial commit)
 
 button:focus,
 button:focus-visible {
