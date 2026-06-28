@@ -6,7 +6,7 @@ import Projects from "./sections/Projects";
 import Stack from "./sections/Stack";
 import Contact from "./sections/Contact";
 import Background from "./sections/Background";
-import "./app.css";
+import "./App.css";
 
 const App = () => {
   return (
