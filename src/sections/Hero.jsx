@@ -21,7 +21,7 @@ const Hero = () => {
       />
 
       {/* Social links — top right */}
-      <div className="fixed z-50 top-6 right-8 flex gap-4">
+      <header className="fixed z-50 top-6 right-8 flex gap-4">
         <a
           href="https://github.com/skairover"
           target="_blank"
@@ -39,7 +39,7 @@ const Hero = () => {
         >
           <FaLinkedin size={22} />
         </a>
-      </div>
+      </header>
 
       {/* Left — text content */}
       <div className="flex flex-col justify-center h-full w-full gap-6 z-10">
